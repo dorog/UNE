@@ -58,3 +58,7 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+UNE/Library/*
+UNE/Temp/*
+UNE/Logs/*
+UNE/ProjectSettings/*
