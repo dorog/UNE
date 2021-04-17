@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3798a4a7a8936a941ba3dac7e6a177cb, type: 3}
+  m_Name: RedPull2
+  m_EditorClassIdentifier: 
+  Color: {r: 1, g: 0, b: 0, a: 1}
+  Id: -1
+  DisplayValue: +2
+  Abilities:
+  - {fileID: 6079129331693800773, guid: f7a09be6f1a71e4458bff17112989dc5, type: 3}
+  - {fileID: 8508458471709079925, guid: b9c262d079872e94db89c56031090059, type: 3}
