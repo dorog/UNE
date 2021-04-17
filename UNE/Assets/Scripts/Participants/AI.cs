@@ -15,6 +15,8 @@ public class AI : Participant
         cards.Add(card);
 
         Instantiate(cardPlaceholder, hand);
+
+        SetGridSpacing(cards.Count);
     }
 
     public override void SelectCard()
@@ -45,6 +47,8 @@ public class AI : Participant
                 cards.RemoveAt(selectedCardIndex);
 
                 CheckCardsState();
+
+                SetGridSpacing(cards.Count);
             }
             else
             {

@@ -102,7 +102,7 @@ RectTransform:
   m_GameObject: {fileID: 1621706653}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0}
-  m_LocalScale: {x: 0.16666667, y: 0.24999994, z: 0.99999976}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1313707572}
   m_Father: {fileID: 973054123374010018}
@@ -110,7 +110,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0.135}
+  m_AnchoredPosition: {x: 0, y: 0.65}
   m_SizeDelta: {x: 0.5, y: 0.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &1621706657
@@ -218,10 +218,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0566936cf4a44346972be4e9a6985d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  drawPile: {fileID: 0}
   roundManager: {fileID: 0}
   hand: {fileID: 973054123982581861}
   token: {fileID: 1621706653}
+  grid: {fileID: 1467026295013082594}
   playerCard: {fileID: 54182649, guid: 3e97e708f741f854dafb282498c0ddec, type: 3}
+  gameOverUI: {fileID: 0}
 --- !u!1 &973054123982581866
 GameObject:
   m_ObjectHideFlags: 0
@@ -259,7 +262,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0.5, y: 0.5}
+  m_SizeDelta: {x: 4.2, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &973054123982581862
 Canvas:
@@ -341,7 +344,7 @@ MonoBehaviour:
   m_ChildAlignment: 4
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 0.1, y: 0.2}
+  m_CellSize: {x: 0.6, y: 0.8}
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 0
-  m_ConstraintCount: 2
+  m_ConstraintCount: 1

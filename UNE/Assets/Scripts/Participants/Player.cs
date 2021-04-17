@@ -1,4 +1,5 @@
-﻿
+﻿using UnityEngine;
+
 public class Player : Participant
 {
     public PlayerCard playerCard;
@@ -15,6 +16,8 @@ public class Player : Participant
         actualCard.SetCard(card);
 
         cardInHand++;
+
+        SetGridSpacing(cardInHand);
     }
 
     public override void SelectCard() { }
@@ -30,7 +33,10 @@ public class Player : Participant
     public void RemoveCard()
     {
         cardInHand--;
+
         CheckCards();
+
+        SetGridSpacing(cardInHand);
     }
 
     private void CheckCards()

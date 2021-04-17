@@ -92,7 +92,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &128742447
 RectTransform:
   m_ObjectHideFlags: 0
@@ -102,7 +102,7 @@ RectTransform:
   m_GameObject: {fileID: 128742443}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.16666664, y: 0.24999994, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 37914568}
   m_Father: {fileID: 4282645196535816187}
@@ -110,7 +110,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0.135}
+  m_AnchoredPosition: {x: 0, y: 0.65}
   m_SizeDelta: {x: 0.5, y: 0.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &128742446
@@ -210,7 +210,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0.5, y: 0.5}
+  m_SizeDelta: {x: 2, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &4282645195945079103
 Canvas:
@@ -292,7 +292,7 @@ MonoBehaviour:
   m_ChildAlignment: 4
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 0.1, y: 0.2}
+  m_CellSize: {x: 0.6, y: 0.8}
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
@@ -341,10 +341,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a31632c74ce42a54e959220a5e56d8ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  drawPile: {fileID: 0}
   roundManager: {fileID: 0}
   hand: {fileID: 4282645195945079100}
   token: {fileID: 128742443}
+  grid: {fileID: 2500645859323708603}
   cardPlaceholder: {fileID: 4068746374053501814, guid: e1f017a8baf03494fbc50084012aef98,
     type: 3}
-  table: {fileID: 0}
   discardPile: {fileID: 0}

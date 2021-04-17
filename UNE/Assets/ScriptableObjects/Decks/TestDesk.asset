@@ -9,9 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e8e3a8c061d86643956311f536a977e, type: 3}
+  m_Script: {fileID: 0}
   m_Name: TestDesk
   m_EditorClassIdentifier: 
-  CardSets:
-  - Amount: 20
-    Card: {fileID: 11400000, guid: 03723c8ee6c199848aaa5b8ffa409a27, type: 2}

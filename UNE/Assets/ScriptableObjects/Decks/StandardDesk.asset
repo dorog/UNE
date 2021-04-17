@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e8e3a8c061d86643956311f536a977e, type: 3}
+  m_Script: {fileID: 11500000, guid: c8a7f2ff3f2ed434da599b1b6a8ac3e0, type: 3}
   m_Name: StandardDesk
   m_EditorClassIdentifier: 
   CardSets:

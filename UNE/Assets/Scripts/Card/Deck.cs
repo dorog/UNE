@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "new Desk", menuName = "Desk")]
-public class Desk : ScriptableObject
+[CreateAssetMenu(fileName = "new Deck", menuName = "Deck")]
+public class Deck : ScriptableObject
 {
     public CardSet[] CardSets;
 

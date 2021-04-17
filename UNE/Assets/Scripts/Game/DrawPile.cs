@@ -4,7 +4,7 @@ using UnityEngine;
 public class DrawPile : MonoBehaviour
 {
     public uint StartRoundCards;
-    public Desk desk;
+    public Deck desk;
 
     public DiscardPile discardPile;
 

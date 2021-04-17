@@ -1,18 +1,38 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public abstract class Participant : MonoBehaviour
 {
     public DrawPile drawPile;
     public RoundManager roundManager;
-    public Transform hand;
+    public RectTransform hand;
 
     public GameObject token;
 
-    protected bool SkipNextTurn = false;
+    public GridLayoutGroup grid;
 
     public abstract void AddCard(Card card);
 
     public abstract void SelectCard();
+
+    protected void SetGridSpacing(int cardInHand)
+    {
+        grid.spacing = new Vector2(CalculateGridSpacingX(cardInHand), 0);
+    }
+
+    private float CalculateGridSpacingX(int cardInHand)
+    {
+        float neededSpace = grid.cellSize.x * cardInHand;
+
+        float gridSpacingX = (neededSpace - hand.sizeDelta.x) / (cardInHand - 1);
+
+        if(gridSpacingX <= 0)
+        {
+            return 0;
+        }
+
+        return -gridSpacingX;
+    }
 
     public void SetToken(bool state)
     {
