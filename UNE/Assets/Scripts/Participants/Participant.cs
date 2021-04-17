@@ -2,9 +2,10 @@
 
 public abstract class Participant : MonoBehaviour
 {
+    public RoundManager roundManager;
     public Transform hand;
 
     public abstract void AddCard(Card card);
 
-    public abstract void ChoseCard();
+    public abstract void SelectCard();
 }

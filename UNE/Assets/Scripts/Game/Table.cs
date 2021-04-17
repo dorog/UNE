@@ -8,6 +8,10 @@ public class Table : MonoBehaviour
 
     public Participant[] participants;
 
+    public DiscardPile discardPile;
+
+    public RoundManager roundManager;
+
     private readonly List<Card> availableCards = new List<Card>();
 
     public void StartGame()
@@ -17,13 +21,17 @@ public class Table : MonoBehaviour
         InitializeGame();
 
         DealCards();
+
+        SelectStartCard();
+
+        StartRoundManager();
     }
 
     private void CheckSetup()
     {
         if(StartRoundCards * participants.Length > desk.CardsCount())
         {
-            Debug.LogError("There is no enough card for the players!");
+            Debug.LogError("There is no enough card for the participants!");
         }
     }
 
@@ -55,5 +63,33 @@ public class Table : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void SelectStartCard()
+    {
+        List<Card> normalCards = availableCards.FindAll(x => x.CardType == CardType.Normal);
+
+        if(normalCards.Count > 0)
+        {
+            int cardIndex = Random.Range(0, normalCards.Count);
+
+            Card selectedCard = normalCards[cardIndex];
+
+            discardPile.ShowFirstCard(selectedCard);
+
+            int realIndex = availableCards.FindIndex(x => x == selectedCard);
+            availableCards.RemoveAt(realIndex);
+        }
+        else
+        {
+            Debug.LogError("There is no enough card for start a game!");
+        }
+    }
+
+    private void StartRoundManager()
+    {
+        roundManager.Initialize(participants, discardPile);
+
+        roundManager.StartGame();
     }
 }

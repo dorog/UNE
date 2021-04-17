@@ -14,8 +14,8 @@ public class AI : Participant
         Instantiate(cardPlaceholder, hand);
     }
 
-    public override void ChoseCard()
+    public override void SelectCard()
     {
-        throw new System.NotImplementedException();
+
     }
 }

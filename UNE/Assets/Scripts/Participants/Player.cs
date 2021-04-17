@@ -1,5 +1,4 @@
-﻿using UnityEngine;
-
+﻿
 public class Player : Participant
 {
     public PlayerCard playerCard;
@@ -7,11 +6,13 @@ public class Player : Participant
     public override void AddCard(Card card)
     {
         PlayerCard actualCard = Instantiate(playerCard, hand);
+        actualCard.owner = this;
+        actualCard.roundManager = roundManager;
         actualCard.SetCard(card);
     }
 
-    public override void ChoseCard()
+    public override void SelectCard()
     {
-        throw new System.NotImplementedException();
+
     }
 }
