@@ -6,7 +6,7 @@ public class AI : Participant
 {
     public GameObject cardPlaceholder;
 
-    public DrawPile table;
+    public DrawPile drawPile;
 
     public DiscardPile discardPile;
 
@@ -31,9 +31,10 @@ public class AI : Participant
         List<Card> validNextCards = CardValidator.GetAllValidNextCards(cards, discardPile.lastDiscardedCard.card);
         if (validNextCards.Count == 0)
         {
-            table.AddCard(this, 1);
-
-            roundManager.PassRound(this);
+            if (roundManager.PassRound(this))
+            {
+                drawPile.AddCard(this, 1);
+            }
         }
         else
         {
@@ -73,5 +74,11 @@ public class AI : Participant
         {
             StopCoroutine(nameof(AsyncSelectCard));
         }
+    }
+
+    public override void ResetHand()
+    {
+        base.ResetHand();
+        cards.Clear();
     }
 }

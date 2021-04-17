@@ -1,4 +1,6 @@
 ﻿
+using UnityEngine;
+
 public class Player : Participant
 {
     public PlayerCard playerCard;
@@ -22,9 +24,10 @@ public class Player : Participant
 
     public void DrawCard()
     {
-        drawPile.AddCard(this, 1);
-
-        roundManager.PassRound(this);
+        if (roundManager.PassRound(this))
+        {
+            drawPile.AddCard(this, 1);
+        }
     }
 
     public void RemoveCard()
@@ -44,5 +47,11 @@ public class Player : Participant
     public override void GameOver(Participant winner)
     {
         gameOverUI.ShowUI(winner == this);
+    }
+
+    public override void ResetHand()
+    {
+        base.ResetHand();
+        cardInHand = 0;
     }
 }

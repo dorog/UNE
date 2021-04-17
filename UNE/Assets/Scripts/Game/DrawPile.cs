@@ -6,28 +6,22 @@ public class DrawPile : MonoBehaviour
     public uint StartRoundCards;
     public Desk desk;
 
-    public Participant[] participants;
-
     public DiscardPile discardPile;
-
-    public RoundManager roundManager;
 
     private readonly List<Card> availableCards = new List<Card>();
 
-    public void StartGame()
+    public void Setup(Participant[] participants)
     {
-        CheckSetup();
+        CheckSetup(participants);
 
         InitializeGame();
 
-        DealCards();
+        DealCards(participants);
 
         SelectStartCard();
-
-        StartRoundManager();
     }
 
-    private void CheckSetup()
+    private void CheckSetup(Participant[] participants)
     {
         if(StartRoundCards * participants.Length > desk.CardsCount())
         {
@@ -48,7 +42,7 @@ public class DrawPile : MonoBehaviour
         }
     }
 
-    private void DealCards()
+    private void DealCards(Participant[] participants)
     {
         for(int roundIndex = 0; roundIndex < StartRoundCards; roundIndex++)
         {
@@ -84,13 +78,6 @@ public class DrawPile : MonoBehaviour
         {
             Debug.LogError("There is no enough card for start a game!");
         }
-    }
-
-    private void StartRoundManager()
-    {
-        roundManager.Initialize(participants, discardPile);
-
-        roundManager.StartGame();
     }
 
     public void AddCard(Participant participant, int amount)

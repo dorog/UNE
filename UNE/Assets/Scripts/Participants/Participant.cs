@@ -17,4 +17,14 @@ public abstract class Participant : MonoBehaviour
     }
 
     public abstract void GameOver(Participant winner);
+
+    public virtual void ResetHand()
+    {
+        foreach(Transform card in hand)
+        {
+            Destroy(card.gameObject);
+        }
+
+        SetToken(false);
+    }
 }

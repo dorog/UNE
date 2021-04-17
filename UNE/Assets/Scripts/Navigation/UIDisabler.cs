@@ -3,12 +3,12 @@
 public class UIDisabler : GameStarter
 {
     public GameObject ui;
-    public DrawPile drawPile;
+    public Table table;
 
     public override void StartGame()
     {
         ui.SetActive(false);
 
-        drawPile.StartGame();
+        table.StartGame();
     }
 }

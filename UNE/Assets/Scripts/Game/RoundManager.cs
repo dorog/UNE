@@ -45,11 +45,18 @@ public class RoundManager : MonoBehaviour
         return false;
     }
 
-    public void PassRound(Participant participant)
+    public bool PassRound(Participant participant)
     {
+        if(participant != participants[actualParticipantIndex])
+        {
+            return false;
+        }
+
         SelectNextParticipant();
 
         participants[actualParticipantIndex].SelectCard();
+
+        return true;
     }
 
     private void SelectNextParticipant()
