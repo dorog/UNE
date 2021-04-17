@@ -3,7 +3,9 @@
 [CreateAssetMenu(fileName = "new Card", menuName = "Card")]
 public class Card : ScriptableObject
 {
-    public CardType CardType;
     public Color Color;
-    public uint Value; 
+    public int Id;
+    public string DisplayValue;
+
+    public CardAbility[] Abilities;
 }

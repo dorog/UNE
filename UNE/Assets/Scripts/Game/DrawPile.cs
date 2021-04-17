@@ -61,13 +61,11 @@ public class DrawPile : MonoBehaviour
 
     private void SelectStartCard()
     {
-        List<Card> normalCards = availableCards.FindAll(x => x.CardType == CardType.Normal);
-
-        if(normalCards.Count > 0)
+        if(availableCards.Count > 0)
         {
-            int cardIndex = Random.Range(0, normalCards.Count);
+            int cardIndex = Random.Range(0, availableCards.Count);
 
-            Card selectedCard = normalCards[cardIndex];
+            Card selectedCard = availableCards[cardIndex];
 
             discardPile.ShowFirstCard(selectedCard);
 
@@ -80,7 +78,7 @@ public class DrawPile : MonoBehaviour
         }
     }
 
-    public void AddCard(Participant participant, int amount)
+    public void AddCard(Participant participant, uint amount)
     {
         for(int i = 0; i < amount; i++)
         {

@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3798a4a7a8936a941ba3dac7e6a177cb, type: 3}
-  m_Name: Green5
+  m_Name: RedSkip
   m_EditorClassIdentifier: 
-  Color: {r: 0, g: 1, b: 0, a: 1}
-  Id: 5
-  DisplayValue: 5
-  Abilities: []
+  Color: {r: 1, g: 0, b: 0, a: 1}
+  Id: -2
+  DisplayValue: Skip
+  Abilities:
+  - {fileID: 8508458471709079925, guid: b9c262d079872e94db89c56031090059, type: 3}

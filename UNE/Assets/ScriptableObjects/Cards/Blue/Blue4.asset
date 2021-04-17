@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3798a4a7a8936a941ba3dac7e6a177cb, type: 3}
   m_Name: Blue4
   m_EditorClassIdentifier: 
-  CardType: 0
   Color: {r: 0.008547783, g: 0, b: 1, a: 1}
-  Value: 4
+  Id: 4
+  DisplayValue: 4
+  Abilities: []

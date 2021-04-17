@@ -37,12 +37,22 @@ public class RoundManager : MonoBehaviour
         {
             SelectNextParticipant();
 
+            ActivateCardAbilities(card);
+
             participants[actualParticipantIndex].SelectCard();
 
             return true;
         }
 
         return false;
+    }
+
+    private void ActivateCardAbilities(Card card)
+    {
+        foreach (var ability in card.Abilities)
+        {
+            ability.TakeEffect(this);
+        }
     }
 
     public bool PassRound(Participant participant)
@@ -59,7 +69,7 @@ public class RoundManager : MonoBehaviour
         return true;
     }
 
-    private void SelectNextParticipant()
+    public void SelectNextParticipant()
     {
         participants[actualParticipantIndex].SetToken(false);
 
@@ -70,6 +80,23 @@ public class RoundManager : MonoBehaviour
         }
 
         participants[actualParticipantIndex].SetToken(true);
+    }
+
+    public Participant GetNextParticipant()
+    {
+        if (actualParticipantIndex == participants.Length - 1)
+        {
+            return participants[0];
+        }
+        else
+        {
+            return participants[actualParticipantIndex + 1];
+        }
+    }
+
+    public Participant GetActualParticipant()
+    {
+        return participants[actualParticipantIndex];
     }
 
     public void Won(Participant winner)

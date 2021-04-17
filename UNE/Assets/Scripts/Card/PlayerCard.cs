@@ -15,7 +15,7 @@ public class PlayerCard : MonoBehaviour
         this.card = card;
 
         background.color = card.Color;
-        number.text = card.Value.ToString();
+        number.text = card.DisplayValue;
     }
 
     public void OnClick()

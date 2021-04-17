@@ -16,11 +16,16 @@ public class DiscardPile : MonoBehaviour
 
     public bool AddCard(Card card)
     {
-        pile.Add(card);
+        if(CardValidator.IsValidNextCard(card, lastDiscardedCard.card))
+        {
+            pile.Add(card);
 
-        lastDiscardedCard.SetCard(card);
+            lastDiscardedCard.SetCard(card);
 
-        return true;
+            return true;
+        }
+
+        return false;
     }
 
     public List<Card> GetPile()

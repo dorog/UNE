@@ -1,10 +1,7 @@
 ﻿
-using UnityEngine;
-
 public class Player : Participant
 {
     public PlayerCard playerCard;
-    public DrawPile drawPile;
 
     public GameOverUI gameOverUI;
 

@@ -6,8 +6,6 @@ public class AI : Participant
 {
     public GameObject cardPlaceholder;
 
-    public DrawPile drawPile;
-
     public DiscardPile discardPile;
 
     private readonly List<Card> cards = new List<Card>();
