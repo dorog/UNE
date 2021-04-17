@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class DiscardPile : MonoBehaviour
 {
-    public PlayerCard lastDiscardedCard;
+    public VisibleCard lastDiscardedCard;
 
     private readonly List<Card> pile = new List<Card>();
 
