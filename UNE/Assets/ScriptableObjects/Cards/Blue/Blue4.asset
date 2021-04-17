@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Blue4
   m_EditorClassIdentifier: 
   CardType: 0
-  Color: {r: 0.008547783, g: 0, b: 1, a: 0}
+  Color: {r: 0.008547783, g: 0, b: 1, a: 1}
   Value: 4
