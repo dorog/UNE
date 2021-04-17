@@ -6,8 +6,8 @@ public class PlayerCard : MonoBehaviour
     public Image background;
     public Text number;
 
-    private Card card;
-    public Player owner;
+    public Card card;
+    public Player player;
     public RoundManager roundManager;
 
     public void SetCard(Card card)
@@ -20,10 +20,12 @@ public class PlayerCard : MonoBehaviour
 
     public void OnClick()
     {
-        bool result = roundManager.SelectCard(owner, card);
+        bool result = roundManager.SelectCard(player, card);
         if (result)
         {
             Destroy(gameObject);
+
+            player.RemoveCard();
         }
     }
 }

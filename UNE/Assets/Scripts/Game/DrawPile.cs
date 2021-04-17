@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class Table : MonoBehaviour
+public class DrawPile : MonoBehaviour
 {
     public uint StartRoundCards;
     public Desk desk;
@@ -91,5 +91,28 @@ public class Table : MonoBehaviour
         roundManager.Initialize(participants, discardPile);
 
         roundManager.StartGame();
+    }
+
+    public void AddCard(Participant participant, int amount)
+    {
+        for(int i = 0; i < amount; i++)
+        {
+            if (availableCards.Count == 0)
+            {
+                Shuffle();
+            }
+
+            int cardIndex = Random.Range(0, availableCards.Count);
+            participant.AddCard(availableCards[cardIndex]);
+
+            availableCards.RemoveAt(cardIndex);
+        }
+    }
+
+    private void Shuffle()
+    {
+        availableCards.AddRange(discardPile.GetPile());
+
+        discardPile.ClearPile();
     }
 }

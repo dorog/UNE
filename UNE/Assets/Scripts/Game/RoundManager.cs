@@ -22,6 +22,7 @@ public class RoundManager : MonoBehaviour
 
     public void StartGame()
     {
+        participants[actualParticipantIndex].SetToken(true);
         participants[actualParticipantIndex].SelectCard();
     }
 
@@ -32,11 +33,43 @@ public class RoundManager : MonoBehaviour
             return false;
         }
 
-        actualParticipantIndex++;
-        discardPile.AddCard(card);
+        if (discardPile.AddCard(card))
+        {
+            SelectNextParticipant();
+
+            participants[actualParticipantIndex].SelectCard();
+
+            return true;
+        }
+
+        return false;
+    }
+
+    public void PassRound(Participant participant)
+    {
+        SelectNextParticipant();
 
         participants[actualParticipantIndex].SelectCard();
+    }
 
-        return true;
+    private void SelectNextParticipant()
+    {
+        participants[actualParticipantIndex].SetToken(false);
+
+        actualParticipantIndex++;
+        if(actualParticipantIndex == participants.Length)
+        {
+            actualParticipantIndex = 0;
+        }
+
+        participants[actualParticipantIndex].SetToken(true);
+    }
+
+    public void Won(Participant winner)
+    {
+        foreach(var participant in participants)
+        {
+            participant.GameOver(winner);
+        }
     }
 }

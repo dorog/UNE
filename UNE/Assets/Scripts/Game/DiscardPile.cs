@@ -22,4 +22,14 @@ public class DiscardPile : MonoBehaviour
 
         return true;
     }
+
+    public List<Card> GetPile()
+    {
+        return pile;
+    }
+
+    public void ClearPile()
+    {
+        pile.Clear();
+    }
 }
