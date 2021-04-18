@@ -25,6 +25,11 @@ public class GameOverUI : MonoBehaviour
     {
         table.StartGame();
 
+        HideUI();
+    }
+
+    public void HideUI()
+    {
         root.SetActive(false);
     }
 }

@@ -1542,6 +1542,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ui: {fileID: 740983813}
+  gameOverUI: {fileID: 1158667338}
 --- !u!1001 &1034619930
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2149,6 +2150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameStarter: {fileID: 740983818}
   gameEnder: {fileID: 1005093931}
+  roundManager: {fileID: 462978812}
 --- !u!1001 &1286460345
 PrefabInstance:
   m_ObjectHideFlags: 0
