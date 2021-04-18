@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BlueSkip
   m_EditorClassIdentifier: 
   Color: {r: 0.008547783, g: 0, b: 1, a: 1}
-  Id: -2
+  Id: -3
   DisplayValue: Skip
   Abilities:
   - {fileID: 8508458471709079925, guid: b9c262d079872e94db89c56031090059, type: 3}

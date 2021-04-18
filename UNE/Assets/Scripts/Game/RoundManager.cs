@@ -7,6 +7,10 @@ public class RoundManager : MonoBehaviour
     private Participant[] participants;
     private DiscardPile discardPile;
 
+    private bool isClockWise = true;
+
+    public RectTransform direction;
+
     public void Initialize(Participant[] participants, DiscardPile discardPile)
     {
         if(participants == null || participants.Length == 0)
@@ -35,9 +39,9 @@ public class RoundManager : MonoBehaviour
 
         if (discardPile.AddCard(card))
         {
-            SelectNextParticipant();
-
             ActivateCardAbilities(card);
+
+            SelectNextParticipant();
 
             participants[actualParticipantIndex].SelectCard();
 
@@ -73,30 +77,36 @@ public class RoundManager : MonoBehaviour
     {
         participants[actualParticipantIndex].SetToken(false);
 
-        actualParticipantIndex++;
-        if(actualParticipantIndex == participants.Length)
-        {
-            actualParticipantIndex = 0;
-        }
+        actualParticipantIndex = GetNextParticipantIndex();
 
         participants[actualParticipantIndex].SetToken(true);
     }
 
-    public Participant GetNextParticipant()
+    public Participant GetNextActualParticipant()
     {
-        if (actualParticipantIndex == participants.Length - 1)
-        {
-            return participants[0];
-        }
-        else
-        {
-            return participants[actualParticipantIndex + 1];
-        }
+        return participants[GetNextParticipantIndex()];
     }
 
-    public Participant GetActualParticipant()
+    private int GetNextParticipantIndex()
     {
-        return participants[actualParticipantIndex];
+        int nextParticipantIndex = actualParticipantIndex + 1 * (isClockWise ? 1 : -1);
+        if (nextParticipantIndex == participants.Length)
+        {
+            return 0;
+        }
+        else if(nextParticipantIndex == -1)
+        {
+            return participants.Length - 1;
+        }
+
+        return nextParticipantIndex;
+    }
+
+    public void ChangeTurnDirection()
+    {
+        isClockWise = !isClockWise;
+
+        direction.rotation *= Quaternion.Euler(180f, 0f, 0f);
     }
 
     public void Won(Participant winner)
@@ -105,5 +115,10 @@ public class RoundManager : MonoBehaviour
         {
             participant.GameOver(winner);
         }
+    }
+
+    public void GameOver()
+    {
+        Won(participants[actualParticipantIndex]);
     }
 }

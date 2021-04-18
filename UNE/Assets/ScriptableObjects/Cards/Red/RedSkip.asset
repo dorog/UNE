@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RedSkip
   m_EditorClassIdentifier: 
   Color: {r: 1, g: 0, b: 0, a: 1}
-  Id: -2
+  Id: -3
   DisplayValue: Skip
   Abilities:
   - {fileID: 8508458471709079925, guid: b9c262d079872e94db89c56031090059, type: 3}

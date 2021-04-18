@@ -5,7 +5,7 @@ public class PullCards : CardAbility
 
     public override void TakeEffect(RoundManager roundManager)
     {
-        Participant nextParticipant = roundManager.GetActualParticipant();
+        Participant nextParticipant = roundManager.GetNextActualParticipant();
         nextParticipant.PullCard(amount);
     }
 }
