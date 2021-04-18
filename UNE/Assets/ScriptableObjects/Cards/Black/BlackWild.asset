@@ -9,6 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: TestDesk
+  m_Script: {fileID: 11500000, guid: 3798a4a7a8936a941ba3dac7e6a177cb, type: 3}
+  m_Name: BlackWild
   m_EditorClassIdentifier: 
+  Color: {r: 0, g: 0, b: 0, a: 1}
+  Id: 
+  DisplayValue: 
+  Abilities:
+  - {fileID: 5630362828946643160, guid: 276a6a1629ee2af47a6850b69f656c59, type: 3}

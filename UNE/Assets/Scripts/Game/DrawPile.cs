@@ -16,9 +16,9 @@ public class DrawPile : MonoBehaviour
 
         InitializeGame();
 
-        DealCards(participants);
-
         SelectStartCard();
+
+        DealCards(participants);
     }
 
     private void CheckSetup(Participant[] participants)
@@ -61,11 +61,13 @@ public class DrawPile : MonoBehaviour
 
     private void SelectStartCard()
     {
-        if(availableCards.Count > 0)
-        {
-            int cardIndex = Random.Range(0, availableCards.Count);
+        List<Card> normalCards = availableCards.FindAll(x => x.Abilities.Length == 0);
 
-            Card selectedCard = availableCards[cardIndex];
+        if (normalCards.Count > 0)
+        {
+            int cardIndex = Random.Range(0, normalCards.Count);
+
+            Card selectedCard = normalCards[cardIndex];
 
             discardPile.ShowFirstCard(selectedCard);
 
@@ -74,23 +76,30 @@ public class DrawPile : MonoBehaviour
         }
         else
         {
-            Debug.LogError("There is no enough card for start a game!");
+            Debug.LogError("There is no enough normal card for start a game!");
         }
     }
 
     public void AddCard(Participant participant, uint amount)
     {
-        for(int i = 0; i < amount; i++)
+        for (int i = 0; i < amount; i++)
         {
             if (availableCards.Count == 0)
             {
                 Shuffle();
             }
 
-            int cardIndex = Random.Range(0, availableCards.Count);
-            participant.AddCard(availableCards[cardIndex]);
+            if(availableCards.Count != 0)
+            {
+                int cardIndex = Random.Range(0, availableCards.Count);
+                participant.AddCard(availableCards[cardIndex]);
 
-            availableCards.RemoveAt(cardIndex);
+                availableCards.RemoveAt(cardIndex);
+            }
+            else
+            {
+                Debug.LogWarning("There is no more card!");
+            }
         }
     }
 

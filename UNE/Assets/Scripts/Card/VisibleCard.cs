@@ -6,13 +6,34 @@ public class VisibleCard : MonoBehaviour
     public Image background;
     public Text number;
 
-    public Card card;
+    protected Card card;
 
     public void SetCard(Card card)
     {
         this.card = card;
 
-        background.color = card.Color;
+        ChangeColor(card.Color.GetColor());
         number.text = card.DisplayValue;
+    }
+
+    public void ChangeColor(Color color)
+    {
+        background.color = color;
+    }
+
+    public Card GetCard()
+    {
+        if(card == null)
+        {
+            return null;
+        }
+
+        Card lastCard = ScriptableObject.CreateInstance<Card>();
+
+        lastCard.Id = card.Id;
+        lastCard.DisplayValue = card.DisplayValue;
+        lastCard.Color = background.color.GetCardColor();
+
+        return lastCard;
     }
 }

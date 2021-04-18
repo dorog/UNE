@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public abstract class CardAbility : MonoBehaviour
 {
-    public abstract void TakeEffect(RoundManager roundManager);
+    public abstract IEnumerator TakeEffect(RoundManager roundManager);
 }

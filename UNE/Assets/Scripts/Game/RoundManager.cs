@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class RoundManager : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class RoundManager : MonoBehaviour
     private bool isClockWise = true;
 
     public RectTransform direction;
+
+    private bool isGameOver = false;
 
     public void Initialize(Participant[] participants, DiscardPile discardPile)
     {
@@ -26,8 +29,24 @@ public class RoundManager : MonoBehaviour
 
     public void StartGame()
     {
+        isGameOver = false;
+
         participants[actualParticipantIndex].SetToken(true);
         participants[actualParticipantIndex].SelectCard();
+    }
+
+    private IEnumerator SelectCard(Card card)
+    {
+        yield return ActivateCardAbilities(card);
+
+        SelectNextParticipant();
+
+        yield return new WaitForSeconds(3);
+
+        if (!isGameOver)
+        {
+            participants[actualParticipantIndex].SelectCard();
+        }
     }
 
     public bool SelectCard(Participant participant, Card card)
@@ -39,11 +58,7 @@ public class RoundManager : MonoBehaviour
 
         if (discardPile.AddCard(card))
         {
-            ActivateCardAbilities(card);
-
-            SelectNextParticipant();
-
-            participants[actualParticipantIndex].SelectCard();
+            StartCoroutine(nameof(SelectCard), card);
 
             return true;
         }
@@ -51,11 +66,11 @@ public class RoundManager : MonoBehaviour
         return false;
     }
 
-    private void ActivateCardAbilities(Card card)
+    private IEnumerator ActivateCardAbilities(Card card)
     {
         foreach (var ability in card.Abilities)
         {
-            ability.TakeEffect(this);
+            yield return ability.TakeEffect(this);
         }
     }
 
@@ -66,11 +81,21 @@ public class RoundManager : MonoBehaviour
             return false;
         }
 
-        SelectNextParticipant();
-
-        participants[actualParticipantIndex].SelectCard();
+        StartCoroutine(nameof(AsyncPassRound));
 
         return true;
+    }
+
+    private IEnumerator AsyncPassRound()
+    {
+        SelectNextParticipant();
+
+        yield return new WaitForSeconds(3);
+
+        if (!isGameOver)
+        {
+            participants[actualParticipantIndex].SelectCard();
+        }
     }
 
     public void SelectNextParticipant()
@@ -82,7 +107,12 @@ public class RoundManager : MonoBehaviour
         participants[actualParticipantIndex].SetToken(true);
     }
 
-    public Participant GetNextActualParticipant()
+    public Participant GetActualParticipant()
+    {
+        return participants[actualParticipantIndex];
+    }
+
+    public Participant GetNextParticipant()
     {
         return participants[GetNextParticipantIndex()];
     }
@@ -115,6 +145,8 @@ public class RoundManager : MonoBehaviour
         {
             participant.GameOver(winner);
         }
+
+        isGameOver = true;
     }
 
     public void GameOver()

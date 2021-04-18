@@ -5,7 +5,7 @@ public class CardValidator : MonoBehaviour
 {
     public static bool IsValidNextCard(Card nextCard, Card lastCard)
     {
-        if(lastCard == null)
+        if (lastCard == null || string.IsNullOrEmpty(nextCard.Id))
         {
             return true;
         }

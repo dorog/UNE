@@ -9,9 +9,9 @@ public class PlayerCard : VisibleCard
         bool result = roundManager.SelectCard(player, card);
         if (result)
         {
-            Destroy(gameObject);
-
             player.RemoveCard();
+
+            Destroy(gameObject);
         }
     }
 }

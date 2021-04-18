@@ -16,7 +16,7 @@ public class DiscardPile : MonoBehaviour
 
     public bool AddCard(Card card)
     {
-        if(CardValidator.IsValidNextCard(card, lastDiscardedCard.card))
+        if(CardValidator.IsValidNextCard(card, lastDiscardedCard.GetCard()))
         {
             pile.Add(card);
 
@@ -26,6 +26,11 @@ public class DiscardPile : MonoBehaviour
         }
 
         return false;
+    }
+
+    public void ChangeLastCardColor(CardColor color)
+    {
+        lastDiscardedCard.ChangeColor(color.GetColor());
     }
 
     public List<Card> GetPile()

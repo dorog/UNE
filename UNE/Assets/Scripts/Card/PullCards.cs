@@ -1,11 +1,14 @@
-﻿
+﻿using System.Collections;
+
 public class PullCards : CardAbility
 {
     public uint amount;
 
-    public override void TakeEffect(RoundManager roundManager)
+    public override IEnumerator TakeEffect(RoundManager roundManager)
     {
-        Participant nextParticipant = roundManager.GetNextActualParticipant();
+        Participant nextParticipant = roundManager.GetNextParticipant();
         nextParticipant.PullCard(amount);
+
+        yield return null;
     }
 }

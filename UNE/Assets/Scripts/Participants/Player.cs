@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class Player : Participant
 {
@@ -7,6 +8,10 @@ public class Player : Participant
     public GameOverUI gameOverUI;
 
     private int cardInHand = 0;
+
+    public GameObject palette;
+    private bool colorSelected = false; 
+    private CardColor selectedColor = CardColor.Black;
 
     public override void AddCard(Card card)
     {
@@ -44,6 +49,8 @@ public class Player : Participant
         if(cardInHand == 0)
         {
             roundManager.Won(this);
+
+            palette.SetActive(false);
         }
     }
 
@@ -56,5 +63,31 @@ public class Player : Participant
     {
         base.ResetHand();
         cardInHand = 0;
+
+        palette.SetActive(false);
+    }
+
+    protected override IEnumerator SelectColor()
+    {
+        palette.SetActive(true);
+
+        while (!colorSelected) 
+        {
+            yield return null;
+        }
+    }
+
+    protected override CardColor GetSelectedColor()
+    {
+        colorSelected = false;
+        return selectedColor;
+    }
+
+    public void SetSelectedColor(CardColor color)
+    {
+        selectedColor = color;
+        colorSelected = true;
+
+        palette.SetActive(false);
     }
 }

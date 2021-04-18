@@ -1,8 +1,11 @@
-﻿
+﻿using System.Collections;
+
 public class SkipTurn : CardAbility
 {
-    public override void TakeEffect(RoundManager roundManager)
+    public override IEnumerator TakeEffect(RoundManager roundManager)
     {
         roundManager.SelectNextParticipant();
+
+        yield return null;
     }
 }

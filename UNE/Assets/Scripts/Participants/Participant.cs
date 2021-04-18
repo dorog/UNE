@@ -1,9 +1,12 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.UI;
 
 public abstract class Participant : MonoBehaviour
 {
     public DrawPile drawPile;
+    public DiscardPile discardPile;
+
     public RoundManager roundManager;
     public RectTransform hand;
 
@@ -14,6 +17,16 @@ public abstract class Participant : MonoBehaviour
     public abstract void AddCard(Card card);
 
     public abstract void SelectCard();
+
+    public IEnumerator ChangeLastCardColor()
+    {
+        yield return SelectColor();
+
+        discardPile.ChangeLastCardColor(GetSelectedColor());
+    }
+
+    protected abstract IEnumerator SelectColor();
+    protected abstract CardColor GetSelectedColor();
 
     protected void SetGridSpacing(int cardInHand)
     {

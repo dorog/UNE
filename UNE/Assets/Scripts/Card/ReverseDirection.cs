@@ -1,8 +1,11 @@
-﻿
+﻿using System.Collections;
+
 public class ReverseDirection : CardAbility
 {
-    public override void TakeEffect(RoundManager roundManager)
+    public override IEnumerator TakeEffect(RoundManager roundManager)
     {
         roundManager.ChangeTurnDirection();
+
+        yield return null;
     }
 }
