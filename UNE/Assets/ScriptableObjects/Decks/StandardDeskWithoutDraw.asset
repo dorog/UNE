@@ -1,0 +1,119 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8a7f2ff3f2ed434da599b1b6a8ac3e0, type: 3}
+  m_Name: StandardDeskWithoutDraw
+  m_EditorClassIdentifier: 
+  CardSets:
+  - Amount: 1
+    Card: {fileID: 11400000, guid: 03723c8ee6c199848aaa5b8ffa409a27, type: 2}
+  - Amount: 2
+    Card: {fileID: 11400000, guid: 632c7802428435b489de52f9a0e48697, type: 2}
+  - Amount: 2
+    Card: {fileID: 11400000, guid: c068a16c8eee34e44a75fe5c24f0492e, type: 2}
+  - Amount: 2
+    Card: {fileID: 11400000, guid: 2ec03a48453562045bab56f6148aa020, type: 2}
+  - Amount: 2
+    Card: {fileID: 11400000, guid: 3b3ae208cab4a9d4f91b89796437caed, type: 2}
+  - Amount: 2
+    Card: {fileID: 11400000, guid: 157db15bb688290459ce0d8a11b85e46, type: 2}
+  - Amount: 2
+    Card: {fileID: 11400000, guid: 2736f230dea123847967ffa28bdbcf30, type: 2}
+  - Amount: 2
+    Card: {fileID: 11400000, guid: 0a3f10e3df836d84da23f991218f9acd, type: 2}
+  - Amount: 2
+    Card: {fileID: 11400000, guid: 3bbb944ea32f8fd419444289bc4c6923, type: 2}
+  - Amount: 2
+    Card: {fileID: 11400000, guid: e16457dfc19502740979552673e417ff, type: 2}
+  - Amount: 1
+    Card: {fileID: 11400000, guid: 7940af47c9e1a7146a1bc0067e7a6679, type: 2}
+  - Amount: 2
+    Card: {fileID: 11400000, guid: 2fe47932e4374b3499f252ef60c8b1c0, type: 2}
+  - Amount: 2
+    Card: {fileID: 11400000, guid: 7a0f3883ac64e8d4dbf60577c38a619f, type: 2}
+  - Amount: 2
+    Card: {fileID: 11400000, guid: e8f8274110d4f604785bbd985e2db5a7, type: 2}
+  - Amount: 2
+    Card: {fileID: 11400000, guid: 2a2fd0e728bfb354b85a2411699f0cf1, type: 2}
+  - Amount: 2
+    Card: {fileID: 11400000, guid: 4e5c7811d72cc88428affab917069e43, type: 2}
+  - Amount: 2
+    Card: {fileID: 11400000, guid: bd4dc8467025a39408e7f36b2c54a47b, type: 2}
+  - Amount: 2
+    Card: {fileID: 11400000, guid: 00022b0a755c57745b387958a6f12d2b, type: 2}
+  - Amount: 2
+    Card: {fileID: 11400000, guid: 8c0450cb3c456e048b7457f079573d34, type: 2}
+  - Amount: 2
+    Card: {fileID: 11400000, guid: 520aa510855a0c84a8c4e56cf0e1c3c1, type: 2}
+  - Amount: 1
+    Card: {fileID: 11400000, guid: 3bdccee6e71f9644cb7c2e8a1179a97a, type: 2}
+  - Amount: 2
+    Card: {fileID: 11400000, guid: 05e4214d924f4df4aa20b3c7eb3f849c, type: 2}
+  - Amount: 2
+    Card: {fileID: 11400000, guid: 8590fdce52ec0934a8e205be39d0bbaf, type: 2}
+  - Amount: 2
+    Card: {fileID: 11400000, guid: 8621c87f1805cf240b81d015f60c67b6, type: 2}
+  - Amount: 2
+    Card: {fileID: 11400000, guid: 9ebb36a21f8c9ea46ac2fe3125904857, type: 2}
+  - Amount: 2
+    Card: {fileID: 11400000, guid: aef8f8007ecbfe342a297c78de6d0e51, type: 2}
+  - Amount: 2
+    Card: {fileID: 11400000, guid: d41d9121ed4d3fc4faac9866f778f09e, type: 2}
+  - Amount: 2
+    Card: {fileID: 11400000, guid: aecb29b0ed9fdf04a807f83d57faa968, type: 2}
+  - Amount: 2
+    Card: {fileID: 11400000, guid: 7dc2b74e65d6a744f9135b54224516a0, type: 2}
+  - Amount: 2
+    Card: {fileID: 11400000, guid: 520aa510855a0c84a8c4e56cf0e1c3c1, type: 2}
+  - Amount: 1
+    Card: {fileID: 11400000, guid: 7fe18729cd5c071429c2dccb1217ed41, type: 2}
+  - Amount: 2
+    Card: {fileID: 11400000, guid: 323ff449a1e743f46b46974e80c2a5cc, type: 2}
+  - Amount: 2
+    Card: {fileID: 11400000, guid: 505aa67fd44c8a6479364f6f6cc4779a, type: 2}
+  - Amount: 2
+    Card: {fileID: 11400000, guid: 2adb6825dde02d240a988641f43f819a, type: 2}
+  - Amount: 2
+    Card: {fileID: 11400000, guid: caac0c95296f85a4495517bc4609732f, type: 2}
+  - Amount: 2
+    Card: {fileID: 11400000, guid: b07872f99709d8c4d9bf24ff785ec427, type: 2}
+  - Amount: 2
+    Card: {fileID: 11400000, guid: aab61d9cd2f9ed94281651b6a94a3440, type: 2}
+  - Amount: 2
+    Card: {fileID: 11400000, guid: 96d795258b556ba4cb070a648fd17222, type: 2}
+  - Amount: 2
+    Card: {fileID: 11400000, guid: 1036346f5927b7a4c95b4c218416a24c, type: 2}
+  - Amount: 2
+    Card: {fileID: 11400000, guid: 2f236fbb57cf17e49b5b836994dc36f9, type: 2}
+  - Amount: 2
+    Card: {fileID: 11400000, guid: ad855bfab6727794a9eb5bfcccb9dc56, type: 2}
+  - Amount: 2
+    Card: {fileID: 11400000, guid: 90df2afb71ec2ed4db7fad1c202e2a19, type: 2}
+  - Amount: 2
+    Card: {fileID: 11400000, guid: 84290b04a3063994fb9142507964eb96, type: 2}
+  - Amount: 2
+    Card: {fileID: 11400000, guid: 892de048439ce36458861e4901407409, type: 2}
+  - Amount: 2
+    Card: {fileID: 11400000, guid: 7240764d49d96954495f18347955d187, type: 2}
+  - Amount: 2
+    Card: {fileID: 11400000, guid: 13570f01ca537e142a6aacd227d0b42d, type: 2}
+  - Amount: 2
+    Card: {fileID: 11400000, guid: 9a4dd87542956e7448862be2f295a379, type: 2}
+  - Amount: 2
+    Card: {fileID: 11400000, guid: a821cfc20db5392498da19aa0267ebe9, type: 2}
+  - Amount: 2
+    Card: {fileID: 11400000, guid: 162a2635b0f3bd249845421d975f270c, type: 2}
+  - Amount: 2
+    Card: {fileID: 11400000, guid: ba77c852270dfc748a7c0bec19e1430c, type: 2}
+  - Amount: 2
+    Card: {fileID: 11400000, guid: fed6f8230a56cc54a84dc5ab38f58b68, type: 2}
+  - Amount: 2
+    Card: {fileID: 11400000, guid: 29d79b99642813b47a146a1d04e1501d, type: 2}
