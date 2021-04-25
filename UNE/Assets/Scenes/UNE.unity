@@ -1010,10 +1010,10 @@ RectTransform:
   m_Father: {fileID: 1158667337}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &462978810
 GameObject:
@@ -2166,6 +2166,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 167165697}
     m_Modifications:
+    - target: {fileID: 37914569, guid: 276a53820153b7240972401701c1e5ca, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 37914569, guid: 276a53820153b7240972401701c1e5ca, type: 3}
+      propertyPath: m_Color.b
+      value: 0.14901961
+      objectReference: {fileID: 0}
+    - target: {fileID: 37914569, guid: 276a53820153b7240972401701c1e5ca, type: 3}
+      propertyPath: m_Color.g
+      value: 0.5404872
+      objectReference: {fileID: 0}
     - target: {fileID: 128742443, guid: 276a53820153b7240972401701c1e5ca, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -2587,10 +2599,10 @@ RectTransform:
   m_Father: {fileID: 1145050776}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -296.2}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1158667338
 MonoBehaviour:
@@ -2617,6 +2629,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 167165697}
     m_Modifications:
+    - target: {fileID: 37914569, guid: 276a53820153b7240972401701c1e5ca, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 37914569, guid: 276a53820153b7240972401701c1e5ca, type: 3}
+      propertyPath: m_Color.b
+      value: 0.14901961
+      objectReference: {fileID: 0}
+    - target: {fileID: 37914569, guid: 276a53820153b7240972401701c1e5ca, type: 3}
+      propertyPath: m_Color.g
+      value: 0.5404872
+      objectReference: {fileID: 0}
     - target: {fileID: 128742446, guid: 276a53820153b7240972401701c1e5ca, type: 3}
       propertyPath: m_Camera
       value: 
@@ -2774,6 +2798,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 167165697}
     m_Modifications:
+    - target: {fileID: 37914569, guid: 276a53820153b7240972401701c1e5ca, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 37914569, guid: 276a53820153b7240972401701c1e5ca, type: 3}
+      propertyPath: m_Color.b
+      value: 0.14901961
+      objectReference: {fileID: 0}
+    - target: {fileID: 37914569, guid: 276a53820153b7240972401701c1e5ca, type: 3}
+      propertyPath: m_Color.g
+      value: 0.5404872
+      objectReference: {fileID: 0}
     - target: {fileID: 128742446, guid: 276a53820153b7240972401701c1e5ca, type: 3}
       propertyPath: m_Camera
       value: 
@@ -4399,6 +4435,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 461077662977680065, guid: 3e97e708f741f854dafb282498c0ddec,
         type: 3}
+    - target: {fileID: 1313707573, guid: 782d0296d8985eb4484928cd6eab7b77, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313707573, guid: 782d0296d8985eb4484928cd6eab7b77, type: 3}
+      propertyPath: m_Color.b
+      value: 0.14901961
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313707573, guid: 782d0296d8985eb4484928cd6eab7b77, type: 3}
+      propertyPath: m_Color.g
+      value: 0.5404872
+      objectReference: {fileID: 0}
     - target: {fileID: 1621706653, guid: 782d0296d8985eb4484928cd6eab7b77, type: 3}
       propertyPath: m_IsActive
       value: 0

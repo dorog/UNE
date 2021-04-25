@@ -4,7 +4,7 @@ public class SkipTurn : CardAbility
 {
     public override IEnumerator TakeEffect(RoundManager roundManager)
     {
-        roundManager.SelectNextParticipant();
+        roundManager.SkipNextParticipant();
 
         yield return null;
     }

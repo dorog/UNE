@@ -12,6 +12,8 @@ public class RoundManager : MonoBehaviour
 
     public RectTransform direction;
 
+    private int participantDelay = 0;
+
     private bool isGameOver = false;
 
     public void Initialize(Participant[] participants, DiscardPile discardPile)
@@ -98,13 +100,20 @@ public class RoundManager : MonoBehaviour
         }
     }
 
-    public void SelectNextParticipant()
+    private void SelectNextParticipant()
     {
         participants[actualParticipantIndex].SetToken(false);
 
         actualParticipantIndex = GetNextParticipantIndex();
 
         participants[actualParticipantIndex].SetToken(true);
+
+        participantDelay = 0;
+    }
+
+    public void SkipNextParticipant()
+    {
+        participantDelay++;
     }
 
     public Participant GetActualParticipant()
@@ -119,12 +128,24 @@ public class RoundManager : MonoBehaviour
 
     private int GetNextParticipantIndex()
     {
+        int nextParticipantIndex = GetNextParticipantIndex(actualParticipantIndex);
+
+        for(int i = 0; i < participantDelay; i++)
+        {
+            nextParticipantIndex = GetNextParticipantIndex(nextParticipantIndex);
+        }
+
+        return nextParticipantIndex;
+    }
+
+    private int GetNextParticipantIndex(int actualParticipantIndex)
+    {
         int nextParticipantIndex = actualParticipantIndex + 1 * (isClockWise ? 1 : -1);
         if (nextParticipantIndex == participants.Length)
         {
             return 0;
         }
-        else if(nextParticipantIndex == -1)
+        else if (nextParticipantIndex == -1)
         {
             return participants.Length - 1;
         }
