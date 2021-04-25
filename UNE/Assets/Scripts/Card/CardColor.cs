@@ -13,9 +13,9 @@ public static class CardColorExtension
     {
         new ColorPair() { CardColor = CardColor.Black, Color = Color.black },
         new ColorPair() { CardColor = CardColor.Blue, Color = Color.blue },
-        new ColorPair() { CardColor = CardColor.Green, Color = Color.green },
+        new ColorPair() { CardColor = CardColor.Green, Color = new Color(0, 154f/255f, 0) },
         new ColorPair() { CardColor = CardColor.Red, Color = Color.red },
-        new ColorPair() { CardColor = CardColor.Yellow, Color = Color.yellow },
+        new ColorPair() { CardColor = CardColor.Yellow, Color = new Color(1f, 213f/255f, 0) },
     };
 
     public static Color GetColor(this CardColor cardColor)

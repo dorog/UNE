@@ -14,5 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Color: 3
   Id: 7
-  DisplayValue: 7
+  MiddleValue: 7
+  SideValue: 7
+  MiddleIcon: {fileID: 0}
+  SideIcon: {fileID: 0}
   Abilities: []

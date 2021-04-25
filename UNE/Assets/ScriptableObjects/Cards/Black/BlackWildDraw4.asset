@@ -14,7 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Color: 0
   Id: 
-  DisplayValue: +4
+  MiddleValue: 
+  SideValue: +4
+  MiddleIcon: {fileID: 21300000, guid: 045844b092cf11a4189a12d8429fe9e7, type: 3}
+  SideIcon: {fileID: 0}
   Abilities:
   - {fileID: 6079129331693800773, guid: 2e6c30e5a0d2c8e4db8c286564130a3b, type: 3}
   - {fileID: 5630362828946643160, guid: 276a6a1629ee2af47a6850b69f656c59, type: 3}
